@@ -6,7 +6,7 @@ class MowersController < ApplicationController
   # GET /mowers
   # GET /mowers.json
   def index
-    @mowers = Mower.all
+    @mowers = Mower.all || []
   end
 
   # GET /mowers/1

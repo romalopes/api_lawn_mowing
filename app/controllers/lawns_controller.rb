@@ -8,7 +8,7 @@ class LawnsController < ApplicationController
   # GET /lawns
   # GET /lawns.json
   def index
-    @lawns = Lawn.all
+    @lawns = Lawn.all || []
   end
 
   # GET /lawns/1
