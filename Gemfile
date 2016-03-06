@@ -37,6 +37,31 @@ group :development, :test do
   gem 'byebug'
 end
 
+
+group :development, :test do
+  gem 'sqlite3', '1.3.8'
+  gem 'rspec-rails', '2.13.1'
+  # gem 'guard-rspec', '2.5.0'
+  gem 'spork-rails', '4.0.0'
+  # gem 'guard-spork', '1.5.0'
+  gem 'childprocess', '0.3.6'
+  gem 'selenium-webdriver', '2.35.1'
+  gem 'capybara', '2.1.0'
+  gem 'factory_girl_rails', '4.2.1'
+end
+
+group :test do
+  gem 'selenium-webdriver', '2.35.1'
+  gem 'capybara', '2.1.0'
+  gem 'cucumber-rails', '1.4.0', :require => false
+  gem 'database_cleaner', github: 'bmabey/database_cleaner'  
+end
+
+group :production do
+  gem 'rails_log_stdout',           github: 'heroku/rails_log_stdout'
+  gem 'rails3_serve_static_assets', github: 'heroku/rails3_serve_static_assets'
+end
+
 group :development do
   # Access an IRB console on exception pages or by using <%= console %> in views
   gem 'web-console', '~> 2.0'
