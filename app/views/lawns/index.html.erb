@@ -12,18 +12,22 @@
   </thead>
 
   <tbody>
-    <% @lawns.each do |lawn| %>
-      <tr>
-        <td><%= lawn.width %></td>
-        <td><%= lawn.height %></td>
-        <td><%= link_to 'Show', lawn %></td>
-        <td><%= link_to 'Edit', edit_lawn_path(lawn) %></td>
-        <td><%= link_to 'Destroy', lawn, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-        <td><%= link_to 'Add Mower', new_lawn_mower_path(lawn_id: lawn.id) %></td>
-        <td><%= link_to 'List Mowers', lawn_mowers_path(lawn_id: lawn.id) %></td>
-        <td><%= link_to 'Execute Lawn Mowing', lawn_execute_path(id: lawn.id) %></td>
-        
-      </tr>
+    <% unless @lawns %>
+      <p><h3>No Lawn.  Please create the first.</h3></p>
+    <% else
+      <% @lawns.each do |lawn| %>
+        <tr>
+          <td><%= lawn.width %></td>
+          <td><%= lawn.height %></td>
+          <td><%= link_to 'Show', lawn %></td>
+          <td><%= link_to 'Edit', edit_lawn_path(lawn) %></td>
+          <td><%= link_to 'Destroy', lawn, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          <td><%= link_to 'Add Mower', new_lawn_mower_path(lawn_id: lawn.id) %></td>
+          <td><%= link_to 'List Mowers', lawn_mowers_path(lawn_id: lawn.id) %></td>
+          <td><%= link_to 'Execute Lawn Mowing', lawn_execute_path(id: lawn.id) %></td>
+          
+        </tr>
+      <% end %>
     <% end %>
   </tbody>
 </table>
