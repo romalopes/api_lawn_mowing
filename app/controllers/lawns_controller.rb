@@ -8,7 +8,8 @@ class LawnsController < ApplicationController
   # GET /lawns
   # GET /lawns.json
   def index
-    @lawns = Lawn.all || []
+    @lawns = Lawn.all
+    @lawns = [] if @lawns.nil?
   end
 
   # GET /lawns/1
