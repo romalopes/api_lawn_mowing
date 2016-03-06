@@ -45,5 +45,5 @@ Git
       git init
       git add . 
       git commit xxxxx
-      git remote add origin https://github.com/romalopes/lawn_mowing.git
-      git push https://github.com/romalopes/api_lawn_mowing.git --all
+      git remote add origin https://github.com/romalopes/api_lawn_mowing.git
+      git push -u origin master
