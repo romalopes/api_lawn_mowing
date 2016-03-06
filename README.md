@@ -31,7 +31,7 @@ Rails
 
 rails new api_lawn_mowing -d mysql  --skip-test-unit
 rake db:create
-rails generate scaffold Lanw width:integer height:integer
+rails generate scaffold Lawn width:integer height:integer
 rake db:migrate
 rails generate scaffold mower x:integer y:integer headings:string commands:string lawn:references
 
@@ -96,10 +96,16 @@ Sending to Heroku
 			$ bundle install
 
 		Basic Commands básicos:
-			$ heroku create
+			$ heroku create api-lawn-mowing
 			$ heroku apps:rename api-lawn-mowing
 			$ git push heroku master
 			$ heroku run rake db:migrate
 			$ heroku open
 			Running in http://api-lawn-mowing.herokuapp.com
 			# heroku logs -n 1500
+
+			$ heroku pg:reset DATABASE
+			$ heroku run rake db:migrate
+			$ heroku run rake db:populate
+			$ heroku restart
+			$ heroku open
