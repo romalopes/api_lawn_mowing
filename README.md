@@ -97,6 +97,7 @@ Sending to Heroku
 
 		Basic Commands básicos:
 			$ heroku create
+			$ heroku apps:rename api-lawn-mowing
 			$ git push heroku master
 			$ heroku run rake db:migrate
 			$ heroku open
