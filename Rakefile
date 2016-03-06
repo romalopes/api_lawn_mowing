@@ -14,3 +14,11 @@ ApiLawnMowingApp::Application.load_tasks
 # task :spec do
 #   sh 'rspec spec'
 # end
+
+require "rake/testtask"
+
+Rake::TestTask.new do |t|
+  t.pattern = "test/**/*_test.rb"
+end
+
+task default: :test
