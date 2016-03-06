@@ -14,7 +14,7 @@
   <tbody>
     <% unless @lawns %>
       <p><h3>No Lawn.  Please create the first.</h3></p>
-    <% else
+    <% else %>
       <% @lawns.each do |lawn| %>
         <tr>
           <td><%= lawn.width %></td>
