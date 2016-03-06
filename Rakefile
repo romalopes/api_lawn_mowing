@@ -4,3 +4,12 @@
 require File.expand_path('../config/application', __FILE__)
 
 Rails.application.load_tasks
+
+require "bundler/gem_tasks"
+task :default => :spec
+
+desc 'run Rspec specs'
+task :spec do
+  sh 'rspec spec'
+end
+

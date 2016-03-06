@@ -57,10 +57,18 @@ group :test do
   gem 'database_cleaner', github: 'bmabey/database_cleaner'  
 end
 
+# group :production do
+#   gem 'rails_log_stdout',           github: 'heroku/rails_log_stdout'
+#   gem 'rails3_serve_static_assets', github: 'heroku/rails3_serve_static_assets'
+# end
 group :production do
   gem 'rails_log_stdout',           github: 'heroku/rails_log_stdout'
   gem 'rails3_serve_static_assets', github: 'heroku/rails3_serve_static_assets'
+  gem 'pg', '0.15.1'
+  gem 'rails_12factor', '0.0.2'
 end
+
+
 
 group :development do
   # Access an IRB console on exception pages or by using <%= console %> in views
