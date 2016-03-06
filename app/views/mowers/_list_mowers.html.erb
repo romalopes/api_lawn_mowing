@@ -1,0 +1,29 @@
+
+<table>
+  <thead>
+    <tr>
+      <th>X</th>
+      <th>Y</th>
+      <th>Headings</th>
+      <th>Commands</th>
+      <th>Lawn</th>
+      <th colspan="3">Actions</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% mowers.each do |mower| %>
+      <tr>
+        <td><%= mower.x %></td>
+        <td><%= mower.y %></td>
+        <td><%= mower.headings %></td>
+        <td><%= mower.commands %></td>
+        <td><%= mower.lawn %></td>
+        <td><%= link_to 'Show', lawn_mower_path(lawn_id: mower.lawn.id, id: mower.id) %></td>
+        <td><%= link_to 'Edit', edit_lawn_mower_path(lawn_id: mower.lawn.id, id:mower.id) %></td>
+        <td><%= link_to 'Destroy', lawn_mower_path(lawn_id: mower.lawn.id, id:mower.id), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Show Lawn', mower.lawn %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

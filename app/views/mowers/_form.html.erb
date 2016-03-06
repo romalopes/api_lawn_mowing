@@ -1,0 +1,36 @@
+<%= form_for(@mower, as: :mower,  url: (@mower.new_record? ? lawn_mowers_path(lawn_id: @lawn.id) : lawn_mower_path(lawn_id: @lawn.id, id: @mower.id) )) do |f| %>
+
+<%#= simple_form_for @contact, url: (@contact.new_record? ? contacts_path : contact_path), html: {multipart: true}  do |f| %>
+
+  <% if @mower.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@mower.errors.count, "error") %> prohibited this mower from being saved:</h2>
+
+      <ul>
+      <% @mower.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :x %><br>
+    <%= f.number_field :x %>
+  </div>
+  <div class="field">
+    <%= f.label :y %><br>
+    <%= f.number_field :y %>
+  </div>
+  <div class="field">
+    <%= f.label :headings %><br>
+    <%= f.text_field :headings %>
+  </div>
+  <div class="field">
+    <%= f.label :commands %><br>
+    <%= f.text_field :commands %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>X:</strong>
+  <%= @mower.x %>
+</p>
+
+<p>
+  <strong>Y:</strong>
+  <%= @mower.y %>
+</p>
+
+<p>
+  <strong>Headings:</strong>
+  <%= @mower.headings %>
+</p>
+
+<p>
+  <strong>Commands:</strong>
+  <%= @mower.commands %>
+</p>
+
+<p>
+  <strong>Lawn:</strong>
+  <%= @mower.lawn %>
+</p>
+
+<%= link_to 'Edit', edit_lawn_mower_path(lawn_id: @lawn.id, id:@mower.id) %> |
+<%= link_to 'Back', lawn_mowers_path %>

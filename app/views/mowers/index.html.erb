@@ -1,0 +1,9 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Mowers</h1>
+
+<%= render :partial => "mowers/list_mowers", locals: {mowers: @mowers } %>
+
+<br>
+
+<%= link_to 'New Mower', new_lawn_mower_path(lawn_id: @lawn.id) %>

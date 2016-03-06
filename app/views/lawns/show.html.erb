@@ -1,0 +1,21 @@
+<p id="notice"><%= notice %></p>
+
+<h3>Information of Lanw <%= @lawn.id %>
+<p>
+  <strong>Width:</strong>
+  <%= @lawn.width %>
+</p>
+
+<p>
+  <strong>Height:</strong>
+  <%= @lawn.height %>
+</p>
+
+<p>
+	<td><%= link_to 'Execute Lawn Mowing', lawn_execute_path(id: @lawn.id) %></td>
+</p>
+
+<%= render :partial => "mowers/list_mowers", locals: {mowers: @lawn.mowers } %>
+
+<%= link_to 'Edit', edit_lawn_path(@lawn) %> |
+<%= link_to 'Back', lawns_path %>

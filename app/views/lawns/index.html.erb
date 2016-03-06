@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Lawns</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Width</th>
+      <th>Height</th>
+      <th colspan="5">Actions</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @lawns.each do |lawn| %>
+      <tr>
+        <td><%= lawn.width %></td>
+        <td><%= lawn.height %></td>
+        <td><%= link_to 'Show', lawn %></td>
+        <td><%= link_to 'Edit', edit_lawn_path(lawn) %></td>
+        <td><%= link_to 'Destroy', lawn, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Add Mower', new_lawn_mower_path(lawn_id: lawn.id) %></td>
+        <td><%= link_to 'List Mowers', lawn_mowers_path(lawn_id: lawn.id) %></td>
+        <td><%= link_to 'Execute Lawn Mowing', lawn_execute_path(id: lawn.id) %></td>
+        
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Lawn', new_lawn_path %>
