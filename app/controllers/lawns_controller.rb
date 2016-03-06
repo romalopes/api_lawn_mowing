@@ -9,9 +9,6 @@ class LawnsController < ApplicationController
   # GET /lawns.json
   def index
     @lawns = Lawn.all
-    @lawns = [] if @lawns.nil?
-
-    puts "\n\n\n#{@lawns}--------\n\n\n"
   end
 
   # GET /lawns/1

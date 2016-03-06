@@ -3,12 +3,14 @@
 
 require File.expand_path('../config/application', __FILE__)
 
-Rails.application.load_tasks
+# Rails.application.load_tasks
+
+ApiLawnMowingApp::Application.load_tasks
 
 # require "bundler/gem_tasks"
-task :default => :spec
+# task :default => :spec
 
-desc 'run Rspec specs'
-task :spec do
-  sh 'rspec spec'
-end
+# desc 'run Rspec specs'
+# task :spec do
+#   sh 'rspec spec'
+# end

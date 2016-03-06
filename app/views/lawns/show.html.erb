@@ -19,3 +19,4 @@
 
 <%= link_to 'Edit', edit_lawn_path(@lawn) %> |
 <%= link_to 'Back', lawns_path %>
+<td><%= link_to 'Add Mower', new_lawn_mower_path(lawn_id: @lawn.id) %></td>

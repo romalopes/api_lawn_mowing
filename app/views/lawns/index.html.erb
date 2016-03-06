@@ -24,8 +24,7 @@
           <td><%= link_to 'Destroy', lawn, method: :delete, data: { confirm: 'Are you sure?' } %></td>
           <td><%= link_to 'Add Mower', new_lawn_mower_path(lawn_id: lawn.id) %></td>
           <td><%= link_to 'List Mowers', lawn_mowers_path(lawn_id: lawn.id) %></td>
-          <td><%= link_to 'Execute Lawn Mowing', lawn_execute_path(id: lawn.id) %></td>
-          
+          <td><%= link_to 'Execute Lawn Mowing', lawn_execute_path(id: lawn.id) %></td>          
         </tr>
       <% end %>
     <% end %>

@@ -15,7 +15,7 @@ ActiveRecord::Schema.define(version: 20160305193704) do
 
   create_table "lawns", force: :cascade do |t|
     t.integer  "width",      limit: 4
-    t.integer  "height",      limit: 4
+    t.integer  "height",     limit: 4
     t.datetime "created_at",           null: false
     t.datetime "updated_at",           null: false
   end

@@ -1,4 +1,5 @@
-Rails.application.routes.draw do
+# Rails.application.routes.draw do
+ApiLawnMowingApp::Application.routes.draw do
   resources :lawns do 
     member do 
       post '/:id/execute' => 'lawn#execute', as: :execute
