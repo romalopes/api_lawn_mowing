@@ -3,11 +3,13 @@ Rails.application.routes.draw do
     member do 
       post '/:id/execute' => 'lawn#execute', as: :execute
     end
-
     resources :mowers
   end
 
   get '/lawn/:id/execute', controller: 'lawns', action: "execute", as: :lawn_execute
+  match '/',        to: 'lawns#index',    via: 'get'
+  match '/home',    to: 'lawns#index',    via: 'get'
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

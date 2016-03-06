@@ -101,4 +101,5 @@ Sending to Heroku
 			$ git push heroku master
 			$ heroku run rake db:migrate
 			$ heroku open
-			Running in http://romamoneyrails.herokuapp.com
+			Running in http://api-lawn-mowing.herokuapp.com
+			# heroku logs -n 1500

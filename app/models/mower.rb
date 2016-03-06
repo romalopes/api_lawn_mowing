@@ -1,5 +1,5 @@
 class Mower < ActiveRecord::Base
-  belongs_to :lawn
+  belongs_to :lawn, dependent: :destroy
 
   validates_presence_of :x, :y, :headings, :commands
   validates :x, numericality: { only_integer: true }
