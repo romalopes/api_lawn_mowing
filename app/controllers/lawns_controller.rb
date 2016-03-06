@@ -1,10 +1,9 @@
 # require 'lawn_mowing'
-require "#{Rails.root}/lib/lawn_mowing/lawn_mowing.rb"
+require "#{Rails.root}/vendor/plugins/lawn_mowing/lawn_mowing.rb"
 
 
 class LawnsController < ApplicationController
   before_action :set_lawn, only: [:show, :edit, :update, :destroy, :execute]
-
 
   # GET /lawns
   # GET /lawns.json
@@ -67,7 +66,7 @@ class LawnsController < ApplicationController
   end
 
   def execute
-    LawnMowing::MowingSystem.init_run_system("#{Rails.root}/lib/lawn_mowing/manual_mowing.txt")
+    LawnMowing::MowingSystem.init_run_system("#{Rails.root}/vendor/plugins/lawn_mowing/manual_mowing.txt")
 
     array_list = @lawn.array_positions
     mowing_system = LawnMowing::MowingSystem.init_run_system(array_list)
