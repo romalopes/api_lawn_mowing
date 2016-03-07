@@ -1,5 +1,5 @@
-# require 'lawn_mowing'
-require "#{Rails.root}/vendor/plugins/lawn_mowing/lawn_mowing.rb"
+require 'lawn_mowing'
+# require "#{Rails.root}/vendor/plugins/lawn_mowing/lawn_mowing.rb"
 
 
 class LawnsController < ApplicationController
@@ -33,10 +33,17 @@ class LawnsController < ApplicationController
     respond_to do |format|
       if @lawn.save
         format.html { redirect_to @lawn, notice: 'Lawn was successfully created.' }
-        format.json { render :show, status: :created, location: @lawn }
+        # format.json { render :show, status: :created, location: @lawn }
+        # j = { json: {width: @lawn.width, height: @lawn.height, id: @lawn.id } }
+        # puts "\n\n\njjjj:#{j}"
+        # format.json j { render status: : creates, j}
+
+        format.json { render json: @lawn }
       else
         format.html { render :new }
+        # render :json => {'error' => 'authentication error'}, :status => 401
         format.json { render json: @lawn.errors, status: :unprocessable_entity }
+
       end
     end
   end
@@ -66,13 +73,10 @@ class LawnsController < ApplicationController
   end
 
   def execute
-    LawnMowing::MowingSystem.init_run_system("#{Rails.root}/vendor/plugins/lawn_mowing/manual_mowing.txt")
-
     array_list = @lawn.array_positions
     mowing_system = LawnMowing::MowingSystem.init_run_system(array_list)
     @lawn.set_mowers_values(mowing_system.lawn_mowers_positions)
-
-
+    @lawn.save
 
     respond_to do |format|
       format.html { redirect_to @lawn, notice: 'Mowing system was run.' }
